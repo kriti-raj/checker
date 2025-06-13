@@ -15,7 +15,7 @@ async function checkInfosysStatusOnce() {
             return;
         }
 
-        if (lastInfosysStatus && lastInfosysStatus !== currentStatus) {
+        if (lastInfosysStatus && lastInfosysStatus == currentStatus) {
             await sendTelegramMessage(`💼 Infosys Status Updated:\n\n${currentStatus}`);
         }
 
@@ -27,7 +27,7 @@ async function checkInfosysStatusOnce() {
 
 function checkInfosysStatusPeriodically() {
     checkInfosysStatusOnce();
-    setInterval(checkInfosysStatusOnce, 5 * 60 * 1000); // every 5 min
+    setInterval(checkInfosysStatusOnce,  1000); // every 5 min
 }
 
 module.exports = { checkInfosysStatusPeriodically };
