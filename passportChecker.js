@@ -37,7 +37,7 @@ async function checkPassportStatusOnce() {
             return;
         }
 
-        if (lastPassportStatus && lastPassportStatus == status) {
+        if (lastPassportStatus && lastPassportStatus !== status) {
             await sendTelegramMessage(`🛂 Passport Status Updated:\n\n${status}`);
         }
 
@@ -49,7 +49,7 @@ async function checkPassportStatusOnce() {
 
 function checkPassportStatusPeriodically() {
     checkPassportStatusOnce();
-    setInterval(checkPassportStatusOnce,  1000);
+    setInterval(checkPassportStatusOnce, 5 * 60 * 1000);
 }
 
 module.exports = { checkPassportStatusPeriodically };
