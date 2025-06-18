@@ -46,7 +46,6 @@ async function checkPnrStatusOnce() {
         }
 
         lastPnrStatus = status;
-        console.log("✅ PNR status checked:", status);
 
     } catch (err) {
         console.error("❌ PNR error:", err.message);
