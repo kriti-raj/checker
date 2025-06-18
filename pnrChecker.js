@@ -56,7 +56,6 @@ async function checkPnrStatusOnce() {
 async function checkPnrStatusPeriodically() {
     checkPnrStatusOnce();
     setInterval(checkPnrStatusOnce, 5 * 60 * 1000);
-    await sendTelegramMessage("Status Checked");
 }
 
 module.exports = { checkPnrStatusPeriodically };
