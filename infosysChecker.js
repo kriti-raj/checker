@@ -1,7 +1,10 @@
 const axios = require('axios');
 const { sendTelegramMessage } = require('./telegram');
 
-const INFOSYS_URL = "https://intapgateway.infosysapps.com/careersci/search/intapjbsrch/getOfferValidation?candidateId=1008460585&dob=2003-10-13";
+const candidateId = process.env.CANDIDATE_ID;
+const dob = process.env.DOB;
+
+const INFOSYS_URL = `https://intapgateway.infosysapps.com/careersci/search/intapjbsrch/getOfferValidation?candidateId=${candidateId}&dob=${dob}`;
 
 let lastInfosysStatus = null;
 

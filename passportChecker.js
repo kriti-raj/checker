@@ -7,6 +7,11 @@ const agent = new https.Agent({
     secureOptions: constants.SSL_OP_LEGACY_SERVER_CONNECT,
 });
 
+const fileNo = process.env.FILE_NUMBER;
+
+const applDob = process.env.APPL_DOB;
+
+
 let lastPassportStatus = null;
 
 async function checkPassportStatusOnce() {
@@ -21,8 +26,8 @@ async function checkPassportStatusOnce() {
         httpsAgent: agent,
         data: JSON.stringify({
             requestResponseMap: {
-                fileNo: 'PA1065159808625',
-                applDob: '13/10/2003',
+                fileNo,
+                applDob,
                 optStatus: 'Application_Status',
             }
         })
