@@ -3,5 +3,5 @@ const { checkPassportStatusPeriodically } = require('./passportChecker');
 const { checkPnrStatusPeriodically } = require('./pnrChecker.js');
 
 checkInfosysStatusPeriodically();
-checkPassportStatusPeriodically();
-checkPnrStatusPeriodically();
+// checkPassportStatusPeriodically();
+// checkPnrStatusPeriodically();
